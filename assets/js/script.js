@@ -13,8 +13,9 @@ $(function () {
 
     $.get({
       url: this.tunefind_url,
-      username: this.username,
-      password: this.password
+      headers: {
+        'Authorization': 'Basic ' + (this.username + ':' + this.password)
+      }
     }).done(function (data) {
       console.log(data)
     })
